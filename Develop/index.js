@@ -3,6 +3,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs")
 const Markdown = require("./utils/generateMarkdown");
+const { type } = require("os");
 
 
 // TODO: Create an array of questions for user input
@@ -19,18 +20,18 @@ inquirer.prompt([
     },
     {
         type: "input",
-        name: "tableofcontents",
-        message: "What does the table of contents include?"
-    },
-    {
-        type: "input",
         name: "installation",
-        message: "What is the methods of installing?"
+        message: "What is the method of installing?"
     },
     {
         type: "input",
         name: "usage",
         message: "What is the usage of the app?"
+    },
+    {
+        type: "input",
+        name: "username",
+        message: "What is your name on github? Include contact information if applicable."
     },
     {
         type: "checkbox",
@@ -52,13 +53,15 @@ inquirer.prompt([
      writeToFile(answers)
     // returns the title,description,tableofcontents,installing steps, and usage with markdown usage
 
-
 });
 
 function writeToFile(answers) {
     const title = answers.title
     const description = answers.description
-    let filecontents = ("# " + title +  "\n" + description )
+    const installation = answers.installation
+    const usage = answers.usage
+    const username = answers.username
+    let filecontents = ("# " + title +  "\n" + description  + "\n" + "# Installation" + "\n" + installation + "\n" + "# usage" + "\n" + usage + "\n" + "# contact me" + "\n" + username + "\n" + Ltype)
     const File = fs.promises.writeFile("GeneratedReadme.md", filecontents)
     
     }
