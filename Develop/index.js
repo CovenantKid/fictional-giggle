@@ -61,7 +61,7 @@ function writeToFile(answers) {
     const installation = answers.installation
     const usage = answers.usage
     const username = answers.username
-    let filecontents = ("# " + title +  "\n" + description  + "\n" + "# Installation" + "\n" + installation + "\n" + "# usage" + "\n" + usage + "\n" + "# contact me" + "\n" + username + "\n" + Ltype)
+    let filecontents = ("# " + title +  "\n" + description  + "\n" + "# Installation" + "\n" + installation + "\n" + "# usage" + "\n" + usage + "\n" + "# questions" + "\n" +"https://github.com/" + username + "\n" + Ltype)
     const File = fs.promises.writeFile("GeneratedReadme.md", filecontents)
     
     }

@@ -4,6 +4,6 @@ f
 f
 # usage
 f
-# contact me
-f
+# questions
+https://github.com/f
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
