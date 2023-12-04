@@ -3,10 +3,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs")
 const Markdown = require("./utils/generateMarkdown");
-const { type } = require("os");
 
 
-// TODO: Create an array of questions for user input
+
+// prompts to get required information.
 inquirer.prompt([
     {
         type: "input",
@@ -54,7 +54,7 @@ inquirer.prompt([
     // returns the title,description,tableofcontents,installing steps, and usage with markdown usage
 
 });
-
+// function will write the readme based on the entered input from earlier.
 function writeToFile(answers) {
     const title = answers.title
     const description = answers.description
@@ -65,10 +65,3 @@ function writeToFile(answers) {
     const File = fs.promises.writeFile("GeneratedReadme.md", filecontents)
     
     }
-
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
